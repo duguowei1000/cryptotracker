@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './routes/Home'
-import Coins from "./routes/Coins";
-import Currency from "./routes/Currency";
+import CoinsHome from "./routes/CoinsHome";
+import Watchlist from "./routes/Watchlist";
 import {
   BrowserRouter,
   Routes,
@@ -16,9 +16,12 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        
-        </Route>
+        {/* *nested under app */}
+        <Route index element ={<CoinsHome />}/>
+        {/* <Route path="/Coins" element={<Coins />}></Route> */}
+        <Route path="/watchlist" element={<Watchlist />}></Route>
       
+      </Route>
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

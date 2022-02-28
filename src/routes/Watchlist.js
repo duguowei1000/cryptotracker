@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function Currency(){
+export default function Watchlist(){
     const { currency } = useParams();
     const [price, setPrice] = useState();
     // const [pricechange, setPriceChange] = useState();
