@@ -36,8 +36,9 @@ export default function CoinsHome(){
                      <img height="50px" key={index} src={coin.image}/>
                      </div>
                             })}
-            
-
+            <div>
+            <button>Add to WatchList</button>
+            </div>
             <div>
                 {/* <Link to={`/Coins/${list[5]["id"]}`}></Link> */}
                 {/* <Link to={`/Coins/${list[0].id}`}></Link> */}
@@ -46,3 +47,5 @@ export default function CoinsHome(){
 
     )
 }
+
+//https://create-react-app.dev/docs/deployment/
