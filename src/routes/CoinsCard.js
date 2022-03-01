@@ -2,21 +2,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const startURL = 'https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=false'
-
 function CoinsCard() {
     const [card,setCard] = useState({}); // {} for empty object //else will be error
     // const [card,setCard] = useState({name: guowei}); // to prevent initial error
     // const [card,setCard] = useState(initialCard);
     const [loading, setLoading] = useState(true)
-    // const[count, setCount] = useState(0)
-    const [url, setUrl] = useState(startURL)
     const [status, setStatus] = useState()
     const {id} = useParams();
     console.log(id)
 
-    // setUrl(`https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=false`)
-    console.log(url)
     useEffect(()=> {
         setStatus("loading")
         fetch(`https://api.coingecko.com/api/v3/coins/${id}?tickers=true&market_data=false`)
@@ -24,7 +18,7 @@ function CoinsCard() {
     .then((response) => response.json())
     .then((d) => { 
         console.log("useEffect",d)
-        setCard(d)
+        setCard(d.description)  //*down to one level above the required value
         setLoading (false)
         setStatus("success")
     })
@@ -32,7 +26,7 @@ function CoinsCard() {
         setStatus("error")
         console.error(error)
     })
-    },[card]);
+    },[]);
 
     if(status === "loading"){
         return <div>Loading...</div>
@@ -44,7 +38,7 @@ function CoinsCard() {
     return (
         <>
         {/* {params.id} */}
-        <div>{card.description.en}</div>
+        <div>{card.en}</div>
         {/* { loading === true ? <h1>loading</h1> : <div>${card.description.en}</div> } */}
         {/* { loading === true ? <h1>loading</h1> : <img src={card.imageUrl} alt="this is the image" /> } */}
         
