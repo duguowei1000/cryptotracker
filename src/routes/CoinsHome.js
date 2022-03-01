@@ -1,5 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
+import CoinsCard from "./CoinsCard";
+import CoinSelection from "../components/CoinSelection";
 
 export default function CoinsHome(){
 
@@ -25,20 +27,15 @@ export default function CoinsHome(){
     return(
         <div>
             <h1>Top 30 Coins</h1>
-            {/* <h1>{list}</h1> */}
-            {/* <h1>{list[0]["id"]}</h1> */}
-
-
-            {list.map((coin,index,index2) => {
-                     return <div className="tickerBox"> 
-                     <div key={index}>{coin.id}</div>
-                     <div key={index}>${coin.current_price}</div>
-                     <img height="50px" key={index} src={coin.image}/>
-                     </div>
-                            })}
+            
+            {list.map((coin,index) => {return <CoinSelection key={index} coin={coin}/>
+            })}
             <div>
             <button>Add to WatchList</button>
             </div>
+            
+        
+                
             <div>
                 {/* <Link to={`/Coins/${list[5]["id"]}`}></Link> */}
                 {/* <Link to={`/Coins/${list[0].id}`}></Link> */}

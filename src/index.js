@@ -5,12 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './routes/Home'
 import CoinsHome from "./routes/CoinsHome";
-import Watchlist from "./routes/Watchlist";
+// import Watchlist from "./routes/Watchlist";
 import {
   BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
+import CoinsCard from './routes/CoinsCard';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -18,8 +19,9 @@ ReactDOM.render(
       <Route path="/" element={<App />}>
         {/* *nested under app */}
         <Route index element ={<CoinsHome />}/>
+        <Route path="/CoinsHome/:id" element={<CoinsCard/>}/>
         {/* <Route path="/Coins" element={<Coins />}></Route> */}
-        <Route path="/watchlist" element={<Watchlist />}></Route>
+        {/* <Route path="/watchlist" element={<Watchlist />}></Route> */}
       
       </Route>
     </Routes>

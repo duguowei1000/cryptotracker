@@ -28,7 +28,6 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://duguowei1000.github.io/cryptotracker/",
   "browserslist": {
     "production": [
       ">0.2%",
