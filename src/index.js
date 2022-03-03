@@ -13,10 +13,10 @@ import {
 } from "react-router-dom";
 import CoinsCard from './routes/CoinsCard';
 
-
+//{process.env.PUBLIC_URL}>
 ReactDOM.render(
   
-  <BrowserRouter>
+  <BrowserRouter basename="/cryptotracker">
     <Routes>
       <Route path="/" element={<App />}>
         {/* *nested under app */}

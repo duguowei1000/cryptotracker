@@ -1,6 +1,6 @@
 {
   "name": "cryptotracker",
-  "homepage": "https://myusername.github.io",
+  "homepage": "https://duguowei1000.github.io/cryptotracker/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=/cryptotracker react-scripts build",
+    "build": "PUBLIC_URL=/cryptotracker/ react-scripts build && mkdir -p ./build/cryptotracker && mv ./build/static ./build/cryptotracker",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -s build -l 8080"
