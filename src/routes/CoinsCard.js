@@ -11,16 +11,11 @@ const chart_ =
         curve: 'smooth',
         width: 3
         },
-//     series: [{
-//     type: 'area',
-//     name: 'XYZ MOTORS',
-    //   data:
-//   }],
     chart: {
     type: 'area',
     id: 'area-datetime',
     stacked: false,
-    height: 350,
+    height: 500,
     
     zoom: {
       type: 'x',
@@ -134,21 +129,26 @@ function CoinsCard() {
     if(status === "error"){
         return <div>Not Loading...</div>
     }
-    console.log("prices =>>",series)
+    console.log("series =>>",series)
 
     console.log(series.prices)
-    series[0].type = 'area'
-    series[0].name = 'XYZ MOTORS'
-    series[0].data = series
-    console.log(series)
+    const inputSeries = [{
+        type : 'area',
+        name : id,
+        data: series.prices
+    }]
+    
+     console.log(inputSeries)
     
 
     return (
         <>
+        <h1>{id}</h1>
+        <Chart options={chart_.options} series={inputSeries} width="100%" height={260} />
         <div>{card.en}</div> 
         {/* { loading === true ? <h1>loading</h1> : <div>${card.description.en}</div> } */}
         {/* { loading === true ? <h1>loading</h1> : <img src={card.imageUrl} alt="this is the image" /> } */}
-        <Chart options={chart_.options} series={series} width="40%" height={260} />
+        
         <nav>
 
         </nav>
