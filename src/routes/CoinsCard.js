@@ -136,9 +136,10 @@ function CoinsCard() {
     }
     console.log("prices =>>",series)
 
-    series.type = 'area'
-    series.name = 'XYZ MOTORS'
-    series.data = series.prices
+    console.log(series.prices)
+    series[0].type = 'area'
+    series[0].name = 'XYZ MOTORS'
+    series[0].data = series
     console.log(series)
     
 
