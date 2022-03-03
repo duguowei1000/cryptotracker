@@ -5,6 +5,7 @@ import CoinSelection from "../components/CoinSelection";
 
 import Chart from 'react-apexcharts'
 
+
 console.log(Date.now())
 const chart_ = 
 {
@@ -221,6 +222,7 @@ export default function CoinsHome(){
       }
        ,[])
     //   , [currency]);
+    console.log(chart_.options.series)
 
     return(
         <div>
@@ -238,7 +240,7 @@ export default function CoinsHome(){
                 {/* <Link to={`/Coins/${list[5]["id"]}`}></Link> */}
                 {/* <Link to={`/Coins/${list[0].id}`}></Link> */}
             </div>
-            <Chart options={chart_.options} series={chart_.options.series} type="bar" width={500} height={320} />
+            <Chart options={chart_.options} series={chart_.options.series} width="40%" height={260} />
         </div>
 
     )
