@@ -39,3 +39,4 @@ reportWebVitals();
 
 
 
+//"build": "PUBLIC_URL=/cryptotracker/ react-scripts build && mkdir -p ./build/cryptotracker && mv ./build/static ./build/cryptotracker",

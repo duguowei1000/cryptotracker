@@ -14,6 +14,7 @@ const chart_ =
 //     series: [{
 //     type: 'area',
 //     name: 'XYZ MOTORS',
+    //   data:
 //   }],
     chart: {
     type: 'area',
@@ -134,9 +135,11 @@ function CoinsCard() {
         return <div>Not Loading...</div>
     }
     console.log("prices =>>",series)
-    // series.data = {
-    //     series.prices
-    // }
+
+    series.type = 'area'
+    series.name = 'XYZ MOTORS'
+    series.data = series.prices
+    console.log(series)
     
 
     return (
@@ -144,7 +147,7 @@ function CoinsCard() {
         <div>{card.en}</div> 
         {/* { loading === true ? <h1>loading</h1> : <div>${card.description.en}</div> } */}
         {/* { loading === true ? <h1>loading</h1> : <img src={card.imageUrl} alt="this is the image" /> } */}
-        <Chart options={chart_.options} series={series.data} width="40%" height={260} />
+        <Chart options={chart_.options} series={series} width="40%" height={260} />
         <nav>
 
         </nav>

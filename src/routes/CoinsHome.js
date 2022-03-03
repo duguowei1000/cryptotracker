@@ -16,7 +16,7 @@ const chart_ =
         },
     series: [{
     type: 'area',
-    name: 'XYZ MOTORS',
+    name: 'ewrwe',
 
     data:[
         [
