@@ -13,7 +13,9 @@ import {
 } from "react-router-dom";
 import CoinsCard from './routes/CoinsCard';
 
+
 ReactDOM.render(
+  
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
@@ -33,3 +35,7 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+
+

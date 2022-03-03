@@ -13,7 +13,7 @@ function CoinsCard() {
 
     useEffect(()=> {
         setStatus("loading")
-        fetch(`https://api.coingecko.com/api/v3/coins/${id}?tickers=true&market_data=false`)
+        fetch(`https://api.coingecko.com/api/v3/coins/${id}?tickers=true&market_data=false`) 
         // fetch("https://api.magicthegathering.io/v1/cards/386615")
     .then((response) => response.json())
     .then((d) => { 
@@ -38,7 +38,7 @@ function CoinsCard() {
     return (
         <>
         {/* {params.id} */}
-        <div>{card.en}</div>
+        <div>{card.en}</div> 
         {/* { loading === true ? <h1>loading</h1> : <div>${card.description.en}</div> } */}
         {/* { loading === true ? <h1>loading</h1> : <img src={card.imageUrl} alt="this is the image" /> } */}
         
