@@ -63,3 +63,4 @@ const chart_ =
   };
 
 export default chart_
+

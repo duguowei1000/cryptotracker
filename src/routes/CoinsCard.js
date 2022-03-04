@@ -12,6 +12,7 @@ function CoinsCard() {
     const [CoinDetailsStatus,setCoinDetailsStatus] = useState(null)
     const [ChartDataStatus, setChartDataStatus] = useState(null)
     const [ChartDataLoaded,setChartDataLoaded] = useState(null)
+    const [CoinName, setCoinName] = useState(null)
     const [series,setSeries]= useState([{
             type: 'area',
             name: 'XYZ MOTORS',
@@ -24,7 +25,9 @@ function CoinsCard() {
     .then((response) => response.json())
     .then((d) => { 
         setCoinDetails(d.description)  //*down to one level above the required value
+        setCoinName(d.name)
         setCoinDetailsStatus(true)
+
     })
     .catch((error) => {
         setStatus(false)
@@ -75,10 +78,11 @@ function CoinsCard() {
         name : id,
         data: series.prices
     }]
+
     //if(ChartDataLoaded){
     return (
         <>
-        <h1>{id}</h1>
+        <h1>{CoinName}</h1>
         <Chart options={chart_.options} series={inputSeries} width="100%" height={450} />
         <div>{CoinDetails.en}</div> 
         {/* {loading === true ? <h1>asfasfafas</h1> : <Chart options={chart_.options} series={inputSeries} width="100%" height={450} />}

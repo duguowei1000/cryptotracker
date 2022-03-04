@@ -4,6 +4,8 @@ import CoinsCard from "./CoinsCard";
 import CoinSelection from "../components/CoinSelection";
 
 import Chart from 'react-apexcharts'
+import { useNavigate } from "react-router-dom";
+
 
 
 console.log(Date.now())
@@ -205,6 +207,10 @@ const chart_ =
 export default function CoinsHome(){
 
     const [list, setList] = useState([]);
+    const [CoinSelected, setCoinSelected] = useState({})
+    const navigate = useNavigate();
+
+
 
     useEffect(() => {
         // fetch(`https://api.coindesk.com/v1/bpi/currentprice/${currency}`)
@@ -224,21 +230,34 @@ export default function CoinsHome(){
     //   , [currency]);
     console.log(chart_.options.series)
 
+    const handleCoinClick = (x) => {
+        console.log(x)
+        setCoinSelected(x.coin.name)
+        console.log(CoinSelected)
+        navigate(`/CoinsHome/${x.coin.id}`);
+        
+        // navigate(`/CoinsHome/${x.id}`);
+      }
+
+    const Tickers = list.map((coin,index) => {
+        return (
+        <CoinSelection 
+        key={index} 
+        coin={coin} 
+        handleCoinClick={handleCoinClick}/>)
+        })
+
     return(
         <div>
             <h1>Top 30 Coins</h1>
-            
-            {list.map((coin,index) => {return <CoinSelection key={index} coin={coin}/>
-            })}
+            {Tickers}
+            {/* {list.map((coin,index) => {return <CoinSelection key={index} coin={coin} handleCoinClick={handleCoinClick}/>
+            })} */}
             <div>
             <button>Add to WatchList</button>
             </div>
-            
-        
-                
+
             <div>
-                {/* <Link to={`/Coins/${list[5]["id"]}`}></Link> */}
-                {/* <Link to={`/Coins/${list[0].id}`}></Link> */}
             </div>
             <Chart options={chart_.options} series={chart_.options.series} width="40%" height={260} />
         </div>
