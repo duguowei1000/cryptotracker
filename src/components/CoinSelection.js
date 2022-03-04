@@ -17,7 +17,7 @@ const CoinSelection = (props) => {
         <button 
             onClick={() => props.handleCoinClick(props)}>
             <div className="tickerID" >{coinName}</div>
-            <div >${coin.current_price}</div>
+            <div className="tickerPrice" >${coin.current_price}</div>
             <img 
             height="50px" 
             src={coin.image}

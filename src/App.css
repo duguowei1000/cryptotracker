@@ -1,9 +1,11 @@
 .tickerID{
-  width: 20px;
+  width: 80px;
   height: 20px;
 
 }
-
+.tickerPrice{
+  margin-top: 10px;
+}
 .topcoinBox{
   display: inline-block;
   width: 100px;
