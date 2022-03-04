@@ -25,6 +25,7 @@ const CoinSelection = (props) => {
         </button>
     </div>
         <button
+            onClick={() => props.handleAddCoin(props)}
         >Add
         </button>
     </div>
