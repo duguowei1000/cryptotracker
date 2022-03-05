@@ -50,6 +50,8 @@ function CoinsCard() {
     }
 
     useEffect(() => {
+        setChartDataLoaded(false)
+        console.log(ChartDataLoaded)
         setStatus("loading")
         fetchCoinDetails();
         fetchChartData();
@@ -79,19 +81,23 @@ function CoinsCard() {
         data: series.prices
     }]
 
-    //if(ChartDataLoaded){
+    // if(ChartDataLoaded){ //isChartDataLoaded &&{}
     return (
+        
         <>
         <h1>{CoinName}</h1>
+        {ChartDataLoaded && 
         <Chart options={chart_.options} series={inputSeries} width="100%" height={450} />
+    }
         <div>{CoinDetails.en}</div> 
-        {/* {loading === true ? <h1>asfasfafas</h1> : <Chart options={chart_.options} series={inputSeries} width="100%" height={450} />}
-        {loading === true ? <h1>hihasfasfasfasi</h1> : <div>{CoinDetails.en}</div>  }  */}
+        {/* {loading === true ? <h1>hihasfasfasfasi</h1> : <div>{CoinDetails.en}</div>  }  */}
         <nav>
 
         </nav>
         </>
+
     )
+    
 
 }
 
