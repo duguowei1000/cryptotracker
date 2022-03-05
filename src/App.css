@@ -17,6 +17,13 @@
   height: 100px;
   display: inline-block;
 }
+.watchlistbox{
+  width: 500px;
+}
+.watchlistTicker{
+  display: inline-block;
+  width: 100%;
+}
 
 .App {
   text-align: center;

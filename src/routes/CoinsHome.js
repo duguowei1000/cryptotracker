@@ -215,7 +215,6 @@ export default function CoinsHome() {
 
 
     useEffect(() => {
-        // fetch(`https://api.coindesk.com/v1/bpi/currentprice/${currency}`)
         fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=1&sparkline=false`)
             .then((r) => r.json())
             .then((d) => {
@@ -239,7 +238,6 @@ export default function CoinsHome() {
     const handleAddCoin = (item) => {
         setWatchlistCart(
             {
-            // ...watchlistCart,[item.coin.name]: item
             ...watchlistCart,[item.coin.name]: item.coin.id
         }
         )

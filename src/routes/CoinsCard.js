@@ -82,7 +82,6 @@ function CoinsCard() {
         data: series.prices
     }]
 
-    // if(ChartDataLoaded){ //isChartDataLoaded &&{}
     return (
         
         <>

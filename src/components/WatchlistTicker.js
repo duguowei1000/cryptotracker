@@ -1,16 +1,29 @@
-
-
-
+import WatchListChart from "./WatchlistChart"
 
 
 function WatchlistTicker(props){
-    console.log(window.localStorage.getItem("watchlistCart"))
-
+    <table>
+  <tr>
+    <td>Emil</td>
+    <td>Tobias</td>
+    <td>Linus</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>14</td>
+    <td>10</td>
+  </tr>
+</table>
+    
     return(
-        <>
-        <div>{props.name}</div>
-        <div>{props.percentchange}%</div>
-        </>
+        <tr>
+        <div className="watchlistTicker">
+        <td><img src={props.img} height="50px"></img></td>
+        <td><div>{props.name}</div></td>
+        <td><div>{props.percentchange}%</div></td>
+        <td><WatchListChart id={props.id} name={props.name}/></td>
+        </div>
+        </tr>
     
     )
 }
