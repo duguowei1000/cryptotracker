@@ -211,6 +211,7 @@ export default function CoinsHome() {
     const [CoinSelected, setCoinSelected] = useState({})
     const [watchlistCart, setWatchlistCart] = useState({})
     const navigate = useNavigate();
+    const myStorage = window.localStorage;
 
 
     useEffect(() => {
@@ -236,12 +237,12 @@ export default function CoinsHome() {
     }
 
     const handleAddCoin = (item) => {
-
-
-        setWatchlistCart({
-            ...watchlistCart,
-            [item.coin.id]: item
-        })
+        setWatchlistCart(
+            {
+            // ...watchlistCart,[item.coin.name]: item
+            ...watchlistCart,[item.coin.name]: item.coin.id
+        }
+        )
 
         // console.log("length>>"+watchlistCart.length)
         // console.log(item.coin.id)
@@ -253,28 +254,23 @@ export default function CoinsHome() {
         // }else if (watchlistCart.forEach(element => (element.coin.id !== item.coin.id))){
         //     setWatchlistCart([...watchlistCart, item])
         //  }
-
-
-        console.log(watchlistCart)
-
-        // setWatchlistcart([...Watchlistcart, item])
-
-
+        let newStorage = myStorage.getItem('watchlistCart')
+        console.log(JSON.parse(newStorage))
     }
 
     const handleRemoveCoin = (item) => {
-        // const newlist = watchlistCart.filter((i) => i !==item)
-        // setWatchlistCart(newlist)
-        console.log(item)
         const clonedlistcart = {...watchlistCart}
         delete clonedlistcart[item]
-        console.log(clonedlistcart)
 
-        setWatchlistCart(
-            clonedlistcart
-        )
+        setWatchlistCart(clonedlistcart)
+            
     }
     console.log(watchlistCart)
+    const addToListStorage = () => {
+        myStorage.setItem('watchlistCart',JSON.stringify(watchlistCart));
+        console.log(myStorage)
+
+    }
 
     const Tickers = list.map((coin, index) => {
         return (
@@ -292,7 +288,7 @@ export default function CoinsHome() {
             {/* {list.map((coin,index) => {return <CoinSelection key={index} coin={coin} handleCoinClick={handleCoinClick}/>
             })} */}
             <div>
-                <button>Add to WatchList</button>
+                <button onClick={addToListStorage}>Add to WatchList</button>
             </div>
             <div>
                 <HomeWatchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin} />

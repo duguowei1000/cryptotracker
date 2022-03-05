@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Chart from 'react-apexcharts'
 import chart_ from "../chart_config";
+import HomeWatchlist from "../components/HomeWatchlist";
 
 
 function CoinsCard() {
