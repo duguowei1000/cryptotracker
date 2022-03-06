@@ -9,6 +9,7 @@ function WatchListChart(props) {
         type: 'area',
         name: 'XYZ MOTORS',
       }])
+    // const [chartConfig, setChartconfig] = useState(null)
 
     useEffect(() => {
         setStatus("loading")
@@ -36,9 +37,31 @@ function WatchListChart(props) {
         name : props.name,
         data: series.prices
     }]
+    // chart_.options.fill.colors = props.colorChange
+    // ({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40});
+    const chartConfig = {...chart_.options, 
+        ["fill"]: {
+        type: 'gradient',
+        colors: props.colorChange,
+        gradient: {
+            shadeIntensity: 0.2,
+            opacityFrom: 0.7,
+            opacityTo: 0.9,
+            stops: [10, 100]
+        }
+      },
+      ["stroke"]: {
+        curve: 'smooth',
+        width: 3,
+        colors:"none"
+        },
+    
+    }
+
+        
     return (
         <>
-            <Chart options={chart_.options} series={inputSeries} width="100%" height={160} />
+            <Chart options={chartConfig} series={inputSeries} width="100%" height={160} />
         </>
     )
 }

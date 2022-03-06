@@ -56,27 +56,26 @@ export default function Watchlist() {
     console.log(coinIDs)
     console.log(Object.values(parsedCart))
 
+
+
+
     const tickers = coinIDs.map((x, index) => (
 
-        
         <li className="watchlistbox"
-            key={index}
-        >   
-            
-            <WatchlistTicker 
-            id={x.id} 
-            name={x.name} 
-            percentchange={x.price_change_percentage_24h}
-            img={x.image} />
+            key={index}>
+            <WatchlistTicker
+                id={x.id}
+                name={x.name}
+                percentchange={x.price_change_percentage_24h}
+                img={x.image}
+            />
 
         </li>))
 
     return (
 
-        <>  
-            
+        <>
             {tickers}
-            
             <button onClick={clearList}>clear watchlist</button>
         </>
 

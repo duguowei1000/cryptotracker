@@ -3,7 +3,8 @@ const chart_ =
     options: {
     stroke: {
         curve: 'smooth',
-        width: 3
+        width: 3,
+        
         },
     chart: {
     type: 'area',
@@ -16,9 +17,9 @@ const chart_ =
       enabled: true,
       autoScaleYaxis: true
     },
-    toolbar: {
-      autoSelected: 'zoom'
-    }
+    // toolbar: {
+    //   autoSelected: 'zoom'
+    // }
   },
   fill: {
     type: 'gradient',
@@ -38,10 +39,10 @@ const chart_ =
     size: 0,
     style:'hollow'
   },
-  title: {
-    text: 'Stock Price Movement',
-    align: 'left'
-  },
+//   title: {
+//     text: 'Stock Price Movement',
+//     align: 'left'
+//   },
   yaxis: {
     labels: {
       formatter: function (val) {
@@ -52,12 +53,12 @@ const chart_ =
       text: 'Price'
     },
     tooltip: {
-        enabled: true
+        enabled: false,
+        followCursor: false,
       }
   },
   xaxis: {
     type: 'datetime',
-    
   },
 }
   };
