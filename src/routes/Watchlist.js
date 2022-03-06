@@ -58,6 +58,7 @@ export default function Watchlist() {
 
     const tickers = coinIDs.map((x, index) => (
 
+        
         <li className="watchlistbox"
             key={index}
         >   
@@ -73,9 +74,9 @@ export default function Watchlist() {
     return (
 
         <>  
-            <ol>
+            
             {tickers}
-            </ol>
+            
             <button onClick={clearList}>clear watchlist</button>
         </>
 

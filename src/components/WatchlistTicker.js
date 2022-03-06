@@ -16,14 +16,14 @@ function WatchlistTicker(props){
 </table>
     
     return(
-        <tr>
+    
         <div className="watchlistTicker">
-        <td><img src={props.img} height="50px"></img></td>
-        <td><div>{props.name}</div></td>
-        <td><div>{props.percentchange}%</div></td>
-        <td><WatchListChart id={props.id} name={props.name}/></td>
+        <img className="inline_block" src={props.img} height="50px"></img>
+        <div className="inline_block">{props.name}</div>
+        <div className="inline_block">{props.percentchange}%</div>
+        <div className="inline_block"><WatchListChart id={props.id} name={props.name}/></div>
         </div>
-        </tr>
+        
     
     )
 }
