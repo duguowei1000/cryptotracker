@@ -3,12 +3,13 @@ import WatchlistTicker from "../components/WatchlistTicker";
 
 console.log(window.localStorage.getItem("watchlistCart"))
 export default function Watchlist() {
-    const watchlistCart = window.localStorage.getItem("watchlistCart")
-    const parsedCart = JSON.parse(watchlistCart || "")
+    const watchlistCart = window.localStorage.getItem("watchlistCart") 
+    const parsedCart = JSON.parse(watchlistCart)
     const [coinDetails, setCoinDetails] = useState({}); // {} for empty object //else will be error
     //const [coinIDs, setCoinIds] = useState([])
 
     console.log(watchlistCart)
+    console.log(parsedCart)
 
     useEffect(() => {
         const fetchCoinDetails = () => {
@@ -66,15 +67,27 @@ export default function Watchlist() {
             <WatchlistTicker
                 id={x.id}
                 name={x.name}
+                price={x.current_price}
                 percentchange={x.price_change_percentage_24h}
                 img={x.image}
             />
+        <hr width="850px"/>
 
         </li>))
 
     return (
 
         <>
+            
+            <div className="watchlistTicker">
+            
+            <h1 className="watchlistfirstRow">Coin</h1>
+            <h1 className="watchlistfirstRow">Price (USD)</h1>
+            <h1 className="watchlistfirstRow">24hr Change</h1>
+            <h1 className="watchlistfirstRow">Last 30 days</h1>
+            
+            </div>
+            <hr width="850px"/> 
             {tickers}
             <button onClick={clearList}>clear watchlist</button>
         </>

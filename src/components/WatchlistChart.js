@@ -61,7 +61,7 @@ function WatchListChart(props) {
         
     return (
         <>
-            <Chart options={chartConfig} series={inputSeries} width="100%" height={160} />
+            <Chart options={chartConfig} series={inputSeries} width="100%" height={150} />
         </>
     )
 }

@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import WatchListChart from "./WatchlistChart";
 const HomeWatchlist = (props) => {
 // const [Series, setSeries] = useState(null)
 //     console.log(props.coin.id)
@@ -23,21 +24,39 @@ const HomeWatchlist = (props) => {
 // const set = new Set(['foo', 'bar', 'baz', 'foo']);
 // Array.from(props.cart);
 
-    const tickerRows = Object.keys(props.cart).map((x,index) => (
+    const watchlistArrayName = Object.keys(props.cart)
+    const watchlistArrayID = Object.values(props.cart)
+
+    const tickerRowsID = watchlistArrayID.map((x) => (
+        x
+))
+    // const tickerRowsName = watchlistArrayID.map((x,index) => 
+    
+    // {return watchlistArrayName.map((j,index) =>
         
+    //         <li className="ULlist"
+    //             key={index}
+    //             onClick={() => props.removeTickerClick(x)}
+    //         >
+    //             {j}
+    //             <WatchListChart id={x}/>
+    //         </li>
+    //         )})
+    const tickerRowsName = watchlistArrayID.map((x,index) => 
+
             <li className="ULlist"
                 key={index}
-                onClick={() => props.removeTickerClick(x)}
+                onClick={() => props.removeTickerClick()}
             >
                 {x}
-            </li>)
-    
-    )
+            </li>
+            )
 
     return (
         <>
         <ol>
-            {tickerRows}
+            {tickerRowsName}
+            
         </ol>
         </>
     )
