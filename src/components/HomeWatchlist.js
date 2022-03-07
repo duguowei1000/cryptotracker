@@ -23,39 +23,29 @@ const HomeWatchlist = (props) => {
 
 // const set = new Set(['foo', 'bar', 'baz', 'foo']);
 // Array.from(props.cart);
-
+    console.log(props.details)
     const watchlistArrayName = Object.keys(props.cart)
-    const watchlistArrayID = Object.values(props.cart)
+    const watchlistArrayID = Object.values(props.details)
 
     const tickerRowsID = watchlistArrayID.map((x) => (
-        x
+        x.id
 ))
-    // const tickerRowsName = watchlistArrayID.map((x,index) => 
-    
-    // {return watchlistArrayName.map((j,index) =>
-        
-    //         <li className="ULlist"
-    //             key={index}
-    //             onClick={() => props.removeTickerClick(x)}
-    //         >
-    //             {j}
-    //             <WatchListChart id={x}/>
-    //         </li>
-    //         )})
-    const tickerRowsName = watchlistArrayID.map((x,index) => 
+    const tickerRowsName = watchlistArrayName.map((x,index) => 
 
             <li className="ULlist"
                 key={index}
-                onClick={() => props.removeTickerClick()}
+                onClick={() => props.removeTickerClick(x)}
             >
-                {x}
+                <div>{x}</div> <div>{tickerRowsID}</div>
             </li>
             )
+
 
     return (
         <>
         <ol>
             {tickerRowsName}
+            
             
         </ol>
         </>
