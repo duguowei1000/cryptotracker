@@ -37,7 +37,7 @@ export default function Watchlist(props) {
 
     const clearList = () => {
         window.localStorage.clear()
-
+        //setCoinIds([])
     }
 
     const parsedArray = Object.values(parsedCart)

@@ -30,9 +30,9 @@ export default function CoinsHome() {
     }
         , [])
 
-    useEffect(() => {
-        addToListStorage()
-    }, [toggle])
+    // useEffect(() => {
+    //     addToListStorage()
+    // }, [toggle])
 
     const handleCoinClick = (x) => {
         console.log(x)
@@ -113,7 +113,9 @@ export default function CoinsHome() {
 
             <div>
             </div>
-            <Watchlist toggle={toggle}/>
+            {/* <Watchlist toggle={toggle}
+                        cart={watchlistCart} 
+                       removeTickerClick={handleRemoveCoin}/> */}
         </div>
 
     )
