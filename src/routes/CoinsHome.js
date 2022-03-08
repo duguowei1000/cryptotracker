@@ -6,18 +6,15 @@ import CoinSelection from "../components/CoinSelection";
 import Chart from 'react-apexcharts'
 import { useNavigate } from "react-router-dom";
 import HomeWatchlist from "../components/HomeWatchlist";
-
-
-
-console.log(Date.now())
-
+import Watchlist from "../routes/Watchlist"
 
 export default function CoinsHome() {
 
     const [list, setList] = useState([]);
     const [CoinSelected, setCoinSelected] = useState({})
     const [watchlistCart, setWatchlistCart] = useState({})
-    const [watchlistDetails, setWatchlistDetails] = useState({})
+    const [watchlistDetails, setWatchlistDetails] = useState([])
+    const [toggle, setToggle] = useState(false);
     const navigate = useNavigate();
     const myStorage = window.localStorage;
 
@@ -32,7 +29,10 @@ export default function CoinsHome() {
 
     }
         , [])
-    //   , [currency]);
+
+    useEffect(() => {
+        addToListStorage()
+    }, [toggle])
 
     const handleCoinClick = (x) => {
         console.log(x)
@@ -43,15 +43,16 @@ export default function CoinsHome() {
     }
 
     const handleAddCoin = (item) => {
+        handleToggle() //add list to local storage
         setWatchlistCart(
             {
             ...watchlistCart,[item.coin.name]: item.coin.id
         }
         )
         setWatchlistDetails(
-            {
-            ...watchlistDetails,[item.coin.name]: item.coin
-        }
+            [
+            ...watchlistDetails,{item}
+        ]
         )
 
         // console.log("length>>"+watchlistCart.length)
@@ -66,6 +67,8 @@ export default function CoinsHome() {
         //  }
         let newStorage = myStorage.getItem('watchlistCart')
         console.log(JSON.parse(newStorage))
+
+        
     }
 
     const handleRemoveCoin = (item) => {
@@ -73,9 +76,15 @@ export default function CoinsHome() {
         delete clonedlistcart[item]
 
         setWatchlistCart(clonedlistcart)
+        handleToggle() //add list to local storage
             
     }
     console.log(watchlistCart)
+
+    const handleToggle = () => {
+        setToggle(!toggle);
+      };
+
     const addToListStorage = () => {
         myStorage.setItem('watchlistCart',JSON.stringify(watchlistCart));
         console.log(myStorage)
@@ -95,8 +104,6 @@ export default function CoinsHome() {
         <div>
             <h1>Top 30 Coins</h1>
             {Tickers}
-            {/* {list.map((coin,index) => {return <CoinSelection key={index} coin={coin} handleCoinClick={handleCoinClick}/>
-            })} */}
             <div>
                 <button onClick={addToListStorage}>Add to WatchList</button>
             </div>
@@ -106,7 +113,7 @@ export default function CoinsHome() {
 
             <div>
             </div>
-            {/* <Chart options={chart_.options} series={chart_.options.series} width="40%" height={260} /> */}
+            <Watchlist toggle={toggle}/>
         </div>
 
     )

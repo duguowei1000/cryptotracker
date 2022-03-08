@@ -2,14 +2,22 @@ import { useEffect, useState } from "react";
 import WatchlistTicker from "../components/WatchlistTicker";
 
 console.log(window.localStorage.getItem("watchlistCart"))
-export default function Watchlist() {
-    const watchlistCart = window.localStorage.getItem("watchlistCart") 
-    const parsedCart = JSON.parse(watchlistCart)
-    const [coinDetails, setCoinDetails] = useState({}); // {} for empty object //else will be error
-    //const [coinIDs, setCoinIds] = useState([])
+export default function Watchlist(props) {
+    const getWatchlist = () => {
+        const defaultCart = {}
+        try{
+            const watchlistCart = window.localStorage.getItem("watchlistCart") 
+            const parsedCart = JSON.parse(watchlistCart)
+            console.log(parsedCart)
+            return parsedCart || defaultCart
+        }catch(error) {
+            console.error(error)
+            return defaultCart
 
-    console.log(watchlistCart)
-    console.log(parsedCart)
+        }
+    }
+    const parsedCart = getWatchlist()
+    const [coinDetails, setCoinDetails] = useState({}); // {} for empty object //else will be error
 
     useEffect(() => {
         const fetchCoinDetails = () => {
@@ -17,7 +25,6 @@ export default function Watchlist() {
                 .then((response) => response.json())
                 .then((d) => {
                     setCoinDetails(d)  //*down to one level above the required value
-                    // setCoinName(d.name)
 
                 })
                 .catch((error) => {
@@ -26,18 +33,12 @@ export default function Watchlist() {
 
         }
         fetchCoinDetails()
-    }, [])
+    }, [props.toggle])
 
     const clearList = () => {
         window.localStorage.clear()
-        //setCoinIds([])
+
     }
-    console.log(coinDetails)
-    // console.log(coinDetails[0]["id"])
-    // const set1 = new Set(coinDetails)
-    // console.log(set1)
-    // coinDetails.forEach(element => { console.log(element["id"])})
-    // coinDetails.forEach(element => { console.log(element["id"] === Object.values(parsedCart))});
 
     const parsedArray = Object.values(parsedCart)
     console.log(parsedArray)
@@ -52,13 +53,10 @@ export default function Watchlist() {
                 console.log(">>>>")
             }
         }
-        // console.log(Object.values(parsedCart[i]))
+ 
     }
     console.log(coinIDs)
     console.log(Object.values(parsedCart))
-
-
-
 
     const tickers = coinIDs.map((x, index) => (
 
@@ -78,9 +76,7 @@ export default function Watchlist() {
     return (
 
         <>
-            
             <div className="watchlistTicker">
-            
             <h1 className="watchlistfirstRow">Coin</h1>
             <h1 className="watchlistfirstRow">Price (USD)</h1>
             <h1 className="watchlistfirstRow">24hr Change</h1>
