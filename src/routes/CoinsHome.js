@@ -5,8 +5,8 @@ import CoinSelection from "../components/CoinSelection";
 
 import Chart from 'react-apexcharts'
 import { useNavigate } from "react-router-dom";
-import HomeWatchlist from "../components/HomeWatchlist";
 import Watchlist from "../routes/Watchlist"
+import Home_Watchlist from "./Home_Watchlist";
 
 export default function CoinsHome() {
 
@@ -51,10 +51,10 @@ export default function CoinsHome() {
         )
         setWatchlistDetails(
             [
-            ...watchlistDetails,{item}
+            ...watchlistDetails, item
         ]
         )
-
+        
         // console.log("length>>"+watchlistCart.length)
         // console.log(item.coin.id)
         // watchlistCart.forEach(element => console.log(element.coin.id) )
@@ -72,8 +72,10 @@ export default function CoinsHome() {
     }
 
     const handleRemoveCoin = (item) => {
+
         const clonedlistcart = {...watchlistCart}
         delete clonedlistcart[item]
+        console.log(item)
 
         setWatchlistCart(clonedlistcart)
         handleToggle() //add list to local storage
@@ -108,7 +110,7 @@ export default function CoinsHome() {
                 <button onClick={addToListStorage}>Add to WatchList</button>
             </div>
             <div>
-                <HomeWatchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin} details={watchlistDetails}/>
+                {/* <HomeWatchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin} details={watchlistDetails}/> */}
             </div>
 
             <div>
@@ -116,6 +118,7 @@ export default function CoinsHome() {
             {/* <Watchlist toggle={toggle}
                         cart={watchlistCart} 
                        removeTickerClick={handleRemoveCoin}/> */}
+            <Home_Watchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin}/>
         </div>
 
     )
