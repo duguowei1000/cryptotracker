@@ -88,8 +88,9 @@ export default function CoinsHome() {
       };
 
     const addToListStorage = () => {
+        // console.log(watchlistCart) //object
         myStorage.setItem('watchlistCart',JSON.stringify(watchlistCart));
-        console.log(myStorage)
+        console.log(myStorage) //string
 
     }
 

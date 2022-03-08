@@ -31,7 +31,7 @@ function WatchlistTicker(props){
             percentchange={props.percentchange}
             colorChange={colorChange()}
             /></div>
-        <button onClick={()=> props.removeTickerClick(props)}> delete </button>
+       
          
         </div>
        

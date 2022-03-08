@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import HomeWLdelete from "../components/HomeWLdelete";
 import WatchlistTicker from "../components/WatchlistTicker";
 
 export default function Home_Watchlist(props) {
@@ -28,7 +29,7 @@ export default function Home_Watchlist(props) {
     console.log(parsedArray)
     const coinIDs = []
     for (let i = 0; i < coinDetails.length; i++) {
-        console.log(coinDetails[i].id)
+        // console.log(coinDetails[i].id)
         for (let j = 0; j < parsedArray.length; j++) {
             if (coinDetails[i].id === parsedArray[j]) {
                 coinIDs.push(coinDetails[i]) //array of coins with their information
@@ -48,8 +49,9 @@ export default function Home_Watchlist(props) {
                 price={x.current_price}
                 percentchange={x.price_change_percentage_24h}
                 img={x.image}
-                removeTickerClick={() => props.removeTickerClick(x.name)} //because we added coin by item name
+                 //because we added coin by item name
             />
+            <HomeWLdelete removeTickerClick={() => props.removeTickerClick(x.name)}/>
             <hr width="850px" />
 
         </li>))
