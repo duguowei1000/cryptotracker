@@ -32,7 +32,8 @@ function WatchlistTicker(props){
             colorChange={colorChange()}
             /></div>
        
-         
+       <button onClick={()=> props.removeTickerClick(props.name)}> delete </button>
+       
         </div>
        
     )
