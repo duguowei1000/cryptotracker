@@ -67,17 +67,18 @@ export default function Watchlist() {
         <div
             key={index}
         >
-            <div className="watchlistbox" >
+            <table className="watchlistbox">
                 <WatchlistTicker
                     id={x.id}
                     name={x.name}
                     price={x.current_price}
                     percentchange={x.price_change_percentage_24h}
                     img={x.image}
+                    market={x.market_cap}
                     removeTickerClick={removeCoinID}
                 />
 
-            </div>
+            </table>
             <hr width="850px" />
 
         </div>))
@@ -86,12 +87,18 @@ export default function Watchlist() {
     return (
 
         <>
-            <div className="watchlistTicker">
-                <h1 className="watchlistfirstRow">Coin</h1>
-                <h1 className="watchlistfirstRow">Price (USD)</h1>
-                <h1 className="watchlistfirstRow">24hr Change</h1>
-                <h1 className="watchlistfirstRow">Last 30 days</h1>
-
+            <div className="header">
+            <div className="watchlistheader">
+            <table className="watchlistTicker" >
+                
+                <td><h1 className="watchlistfirstRow" width="100px">Coin</h1></td>
+                <td><h1 className="watchlistfirstRow" width="100px">Price (USD)</h1></td>
+                <td><h1 className="watchlistfirstRow" width="100px">Market Cap</h1></td>
+                <td><h1 className="watchlistfirstRow">24hr Change</h1></td>
+                <td><h1 className="watchlistfirstRow">Last 30 days</h1></td>
+                
+            </table>
+            </div>
             </div>
 
             {tickers}

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import HomeWLdelete from "../components/HomeWLdelete";
 import HomeWatchlistTicker from "../components/HomeWatchlistTicker";
 
 export default function Home_Watchlist(props) {
@@ -21,9 +20,6 @@ export default function Home_Watchlist(props) {
         fetchCoinDetails()
     }, [])
 
-    const clearList = () => {
-        window.localStorage.clear()
-    }
     console.log(props.cart)
     const parsedArray = Object.values(props.cart) //coin ids in an array
     console.log(parsedArray)
@@ -73,7 +69,7 @@ export default function Home_Watchlist(props) {
                 </div>
                 <hr width="850px" />
                 {tickers}
-                {/* <button onClick={clearList}>clear watchlist</button> */}
+    
             </>
 
         )

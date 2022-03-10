@@ -35,11 +35,27 @@
 .name_size{
   font-size: 18px;
 }
+.watchlistheader{
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.header{
+  margin-left: 10px;
+}
 .watchlistTicker{
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
+  
+}
+
+
+.border{
+  border: 2px ;
 }
 
 .App {

@@ -6,10 +6,9 @@ import chart_ from "../chart_config";
 function WatchListChart(props) {
     const [status, setStatus] = useState()
     const [series, setSeries] = useState([{
-        type: 'area',
-        name: 'XYZ MOTORS',
+        // type: 'area',
+        // name: 'XYZ MOTORS',
       }])
-    // const [chartConfig, setChartconfig] = useState(null)
 
     useEffect(() => {
         setStatus("loading")
