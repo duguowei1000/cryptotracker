@@ -16,7 +16,7 @@ export default function Watchlist(props) {
 
         }
     }
-    let parsedCart = getWatchlist()
+    const parsedCart = getWatchlist()
     const [coinDetails, setCoinDetails] = useState({}); // {} for empty object //else will be error
 
     useEffect(() => {
@@ -40,34 +40,49 @@ export default function Watchlist(props) {
         //setCoinIds([])
     }
 
-    const parsedArray = Object.values(parsedCart)
+    let parsedArray = Object.values(parsedCart)
     console.log(parsedArray)
-    const coinIDs = []
+    const coins = []
     for (let i = 0; i < coinDetails.length; i++) {
         // console.log(coinDetails[i].id)
         for (let j = 0; j < parsedArray.length; j++) {
-            if (coinDetails[i].id === parsedArray[j]) {
+            if (coinDetails[i].id === parsedArray[j]) {  //parsedArray is in id
                 console.log(coinDetails[i].id)
-                coinIDs.push(coinDetails[i]) //array of coins with their information
+                coins.push(coinDetails[i]) //array of coins with their information
                 console.log(parsedArray[j])
                 console.log(">>>>")
             }
         }
  
     }
-    console.log(coinIDs)
+    console.log(coins)
     console.log(Object.values(parsedCart))
 
+    let coinsObj = []
+    let newCoinsArray = []
     const removeCoinID = (storedItem) => {
-        for(let j=0; j<coinIDs.length; j++){
+        for(let j=0; j<coins.length; j++){
             console.log(storedItem.id)
-            console.log(coinIDs[j].id)
-            if(coinIDs[j].id === storedItem.id){
-                coinIDs.splice(j, 1)
+            console.log(coins[j].id)
+            if(coins[j].id === storedItem.id){
+                coins.splice(j, 1)
+                newCoinsArray = coins
             }
+            console.log(newCoinsArray) //array of objects
+            
         }
-        console.log(coinIDs)
-        refreshListStorage(coinIDs)
+        for(let k=0; k<newCoinsArray.length -1; k++){
+            console.log(newCoinsArray)
+            coinsObj[k] = { [newCoinsArray[k].name]  : newCoinsArray[k].id }
+        }
+        console.log(coins) //array of objects
+        
+        console.log(coinsObj)
+        console.log(JSON.stringify(coinsObj))
+        // refreshListStorage(coinIDs)
+        window.localStorage.setItem('watchlistCart',JSON.stringify(coinsObj));
+        parsedCart = getWatchlist()
+
     }
 
     const refreshListStorage = () => {
@@ -81,22 +96,25 @@ export default function Watchlist(props) {
 
     }
 
-    const tickers = coinIDs.map((x, index) => (
+    const tickers = coins.map((x, index) => (
 
-        <li className="watchlistbox" 
+        <div 
             key={index}
             >
+            <div className="watchlistbox" >
             <WatchlistTicker
                 id={x.id}
                 name={x.name}
                 price={x.current_price}
                 percentchange={x.price_change_percentage_24h}
                 img={x.image}
+                removeTickerClick= {removeCoinID}
             />
-             <button className="inline_block" onClick={()=> removeCoinID(x)}> delete </button>
-        <hr width="850px"/>
+             
+             </div>
+             <hr width="850px"/>
 
-        </li>))
+        </div>))
 
     return (
 
@@ -108,7 +126,7 @@ export default function Watchlist(props) {
             <h1 className="watchlistfirstRow">Last 30 days</h1>
             
             </div>
-            <hr width="850px"/> 
+            
             {tickers}
             <button onClick={clearList}>clear watchlist</button>
         </>

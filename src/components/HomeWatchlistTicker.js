@@ -1,7 +1,7 @@
 import WatchListChart from "./WatchlistChart"
 
 
-function WatchlistTicker(props){
+function HomeWatchlistTicker(props){
 
         function colorChange (){
             if(props.percentchange < 0){
@@ -31,12 +31,12 @@ function WatchlistTicker(props){
             percentchange={props.percentchange}
             colorChange={colorChange()}
             /></div>
-        <button className="inline_block" onClick={()=> props.removeTickerClick(props)}> delete </button>
-        
+       
+       <button onClick={()=> props.removeTickerClick(props.name)}> delete </button>
        
         </div>
        
     )
 }
 
-export default WatchlistTicker
+export default HomeWatchlistTicker

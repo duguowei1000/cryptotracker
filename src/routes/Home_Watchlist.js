@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import HomeWLdelete from "../components/HomeWLdelete";
-import WatchlistTicker from "../components/WatchlistTicker";
+import HomeWatchlistTicker from "../components/HomeWatchlistTicker";
 
 export default function Home_Watchlist(props) {
     const [coinDetails, setCoinDetails] = useState({}); // {} for empty object //else will be error
@@ -40,11 +40,11 @@ export default function Home_Watchlist(props) {
 
     const tickers = coinIDs.map((x, index) => (
 
-        <li 
+        <div 
             // onClick={() => props.removeTickerClick(x)}
             key={index}>
                 <div className="watchlistbox" >
-            <WatchlistTicker 
+            <HomeWatchlistTicker 
                 id={x.id}
                 name={x.name}
                 price={x.current_price}
@@ -60,7 +60,7 @@ export default function Home_Watchlist(props) {
             
             
 
-        </li>))
+        </div>))
 
         return (
 

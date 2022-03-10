@@ -5,7 +5,6 @@ import CoinSelection from "../components/CoinSelection";
 
 import Chart from 'react-apexcharts'
 import { useNavigate } from "react-router-dom";
-import Watchlist from "../routes/Watchlist"
 import Home_Watchlist from "./Home_Watchlist";
 
 export default function CoinsHome() {
@@ -110,15 +109,6 @@ export default function CoinsHome() {
             <div>
                 <button onClick={addToListStorage}>Add to WatchList</button>
             </div>
-            <div>
-                {/* <HomeWatchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin} details={watchlistDetails}/> */}
-            </div>
-
-            <div>
-            </div>
-            {/* <Watchlist toggle={toggle}
-                        cart={watchlistCart} 
-                       removeTickerClick={handleRemoveCoin}/> */}
             <Home_Watchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin}/>
         </div>
 
