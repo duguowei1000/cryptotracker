@@ -29,9 +29,6 @@ export default function CoinsHome() {
     }
         , [])
 
-    // useEffect(() => {
-    //     addToListStorage()
-    // }, [toggle])
 
     const handleCoinClick = (x) => {
         console.log(x)
@@ -53,21 +50,8 @@ export default function CoinsHome() {
             ...watchlistDetails, item
         ]
         )
-        
-        // console.log("length>>"+watchlistCart.length)
-        // console.log(item.coin.id)
-        // watchlistCart.forEach(element => console.log(element.coin.id) )
-        // watchlistCart.forEach(element => console.log(element.coin.id === item.coin.id))
-        // watchlistCart.forEach(element => console.log("not=" + (element.coin.id !== item.coin.id)))
-        // if ((watchlistCart.length === 0)){
-        //     setWatchlistCart([...watchlistCart, item])
-        // }else if (watchlistCart.forEach(element => (element.coin.id !== item.coin.id))){
-        //     setWatchlistCart([...watchlistCart, item])
-        //  }
         let newStorage = myStorage.getItem('watchlistCart')
         console.log(JSON.parse(newStorage))
-
-        
     }
 
     const handleRemoveCoin = (item) => {
@@ -114,5 +98,3 @@ export default function CoinsHome() {
 
     )
 }
-
-//https://create-react-app.dev/docs/deployment/

@@ -4,9 +4,6 @@ import WatchlistTicker from "../components/WatchlistTicker";
 console.log(window.localStorage.getItem("watchlistCart"))
 export default function Watchlist() {
     const [coinDetails, setCoinDetails] = useState([]); // {} for empty object //else will be error
-    const [coinsObj, setcoinsObj] = useState([])
-    const [newCoinsArray, setnewCoinsArray] = useState([])
-    const [toggle, setToggle] = useState(false);
     const [coins, setCoins] = useState([])
 
 
@@ -56,28 +53,6 @@ export default function Watchlist() {
     
         window.localStorage.setItem("watchlistCart", JSON.stringify(watchlist))
         setCoinDetails([...coinDetails]) //trigger the useeffect for filtering
-        //     console.log("stored",storedItem)
-        // for (let j = 0; j < coins.length ; j++) {
-        //     console.log(storedItem.id)
-        //     console.log(coins[j].id)
-        //     if (coins[j].id === storedItem.id) {
-        //         setcoinsObj([])
-        //         // coinsObj = [] //this makes sure the array  is empty before pushing
-        //         coins.splice(j, 1)
-        //         // newCoinsArray = coins
-        //         setnewCoinsArray(coins)
-        //         console.log(newCoinsArray) //array of objects
-        //         newCoinsArray.map(el => {               //for each element to push in to Object
-        //             coinsObj.push({ [el.name]: el.id })
-        //         })
-        //     }
-        //     console.log('coinsobj', coinsObj)
-        //     window.localStorage.setItem('watchlistCart', JSON.stringify(coinsObj));
-        //     let stored =window.localStorage.getItem("watchlistCart")
-        //     console.log(stored)
-            
-        // }
-        // handleToggle();
     }
 
 
@@ -127,3 +102,21 @@ export default function Watchlist() {
 
 
 }
+        // const [coinsObj, setcoinsObj] = useState([])
+        // const [newCoinsArray, setnewCoinsArray] = useState([])
+        // for (let j = 0; j < coins.length ; j++) {
+        //     if (coins[j].id === storedItem.id) {
+        //         setcoinsObj([])
+        //         // coinsObj = [] //this makes sure the array  is empty before pushing
+        //         coins.splice(j, 1)
+        //         // newCoinsArray = coins
+        //         setnewCoinsArray(coins)
+        //         console.log(newCoinsArray) //array of objects
+        //         newCoinsArray.map(el => {               //for each element to push in to Object
+        //             coinsObj.push({ [el.name]: el.id })
+        //         })
+        //     }
+        //     window.localStorage.setItem('watchlistCart', JSON.stringify(coinsObj));
+        //     let stored =window.localStorage.getItem("watchlistCart")
+        // }
+        // handleToggle();
