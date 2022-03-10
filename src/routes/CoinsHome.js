@@ -1,9 +1,5 @@
-import { useParams, Link, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import CoinsCard from "./CoinsCard";
 import CoinSelection from "../components/CoinSelection";
-
-import Chart from 'react-apexcharts'
 import { useNavigate } from "react-router-dom";
 import Home_Watchlist from "./Home_Watchlist";
 
@@ -91,7 +87,7 @@ export default function CoinsHome() {
             <h1>Top 30 Coins</h1>
             {Tickers}
             <div>
-                <button onClick={addToListStorage}>Add to WatchList</button>
+                <button onClick={addToListStorage}>Save to WatchList</button>
             </div>
             <Home_Watchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin}/>
         </div>

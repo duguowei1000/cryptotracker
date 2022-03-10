@@ -45,6 +45,16 @@
 .header{
   margin-left: 10px;
 }
+.header_home{
+  margin-left: 180px;
+}
+.watchlistheader_home{
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
 .watchlistTicker{
   width: 100%;
   display: flex;

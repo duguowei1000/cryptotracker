@@ -59,13 +59,18 @@ export default function Home_Watchlist(props) {
 
         return (
 
-            <>
-                <div className="watchlistTicker">
-                    <h1 className="watchlistfirstRow">Coin</h1>
-                    <h1 className="watchlistfirstRow">Price (USD)</h1>
-                    <h1 className="watchlistfirstRow">24hr Change</h1>
-                    <h1 className="watchlistfirstRow">Last 30 days</h1>
+            <>  
+                <div className="header_home">
+                <div className="watchlistheader_home">
+                <table className="watchlistTicker">
+                
+                <td><h1 className="watchlistfirstRow">Coin</h1></td>
+                <td><h1 className="watchlistfirstRow">Price (USD)</h1></td>
+                <td><h1 className="watchlistfirstRow">24hr Change</h1></td>
+                <td><h1 className="watchlistfirstRow">Last 30 days</h1></td>
 
+                </table>
+                </div>
                 </div>
                 <hr width="850px" />
                 {tickers}

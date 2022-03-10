@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from './routes/Home'
 import CoinsHome from "./routes/CoinsHome";
 import Watchlist from "./routes/Watchlist";
 import {

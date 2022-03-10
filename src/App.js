@@ -16,9 +16,9 @@ function App() {
         }}
       >
         
-        <Link to="/"> CoinsHome </Link> | {" "}
+        <Link to="/"> Home </Link> | {" "}
         {/* <Link to="CoinsHome">Coinlist</Link> | {" "} */}
-        <Link to="watchlist">watchlist</Link> 
+        <Link to="watchlist">Watchlist</Link> 
  
       </nav>
 

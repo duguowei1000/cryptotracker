@@ -91,10 +91,9 @@ function CoinsCard() {
         {ChartDataLoaded && 
         <Chart options={chart_.options} series={inputSeries} width="100%" height={450} />
     }   
-        {/* <div dangerouslySetInnerHTML={createMarkup()} */}
         <div>{CoinDetails.en}</div>
         <div dangerouslySetInnerHTML={createMarkup()} /> 
-        {/* {loading === true ? <h1>hihasfasfasfasi</h1> : <div>{CoinDetails.en}</div>  }  */}
+ 
         <nav>
 
         </nav>
