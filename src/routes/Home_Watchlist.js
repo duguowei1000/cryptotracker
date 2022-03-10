@@ -41,7 +41,6 @@ export default function Home_Watchlist(props) {
     const tickers = coinIDs.map((x, index) => (
 
         <div 
-            // onClick={() => props.removeTickerClick(x)}
             key={index}>
                 <div className="watchlistbox" >
             <HomeWatchlistTicker 

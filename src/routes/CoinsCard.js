@@ -80,6 +80,9 @@ function CoinsCard() {
         name : id,
         data: series.prices
     }]
+    function createMarkup() {
+        return {__html: CoinDetails.en};
+      }
 
     return (
         
@@ -87,8 +90,10 @@ function CoinsCard() {
         <h1>{CoinName}</h1>
         {ChartDataLoaded && 
         <Chart options={chart_.options} series={inputSeries} width="100%" height={450} />
-    }
-        <div>{CoinDetails.en}</div> 
+    }   
+        {/* <div dangerouslySetInnerHTML={createMarkup()} */}
+        <div>{CoinDetails.en}</div>
+        <div dangerouslySetInnerHTML={createMarkup()} /> 
         {/* {loading === true ? <h1>hihasfasfasfasi</h1> : <div>{CoinDetails.en}</div>  }  */}
         <nav>
 
