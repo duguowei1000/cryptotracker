@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/cryptotracker/static/css/main.356e949c.css",
-    "main.js": "/cryptotracker/static/js/main.9925cfa1.js",
-    "static/js/787.9340f2da.chunk.js": "/cryptotracker/static/js/787.9340f2da.chunk.js",
-    "static/media/background.jpg": "/cryptotracker/static/media/background.e27f4d175bbf9058271b.jpg",
-    "index.html": "/cryptotracker/index.html",
-    "main.356e949c.css.map": "/cryptotracker/static/css/main.356e949c.css.map",
-    "main.9925cfa1.js.map": "/cryptotracker/static/js/main.9925cfa1.js.map",
-    "787.9340f2da.chunk.js.map": "/cryptotracker/static/js/787.9340f2da.chunk.js.map"
+    "main.css": "/llamatracker/static/css/main.88ca909d.css",
+    "main.js": "/llamatracker/static/js/main.eea6c038.js",
+    "static/js/787.9340f2da.chunk.js": "/llamatracker/static/js/787.9340f2da.chunk.js",
+    "index.html": "/llamatracker/index.html",
+    "main.88ca909d.css.map": "/llamatracker/static/css/main.88ca909d.css.map",
+    "main.eea6c038.js.map": "/llamatracker/static/js/main.eea6c038.js.map",
+    "787.9340f2da.chunk.js.map": "/llamatracker/static/js/787.9340f2da.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.356e949c.css",
-    "static/js/main.9925cfa1.js"
+    "static/css/main.88ca909d.css",
+    "static/js/main.eea6c038.js"
   ]
 }
