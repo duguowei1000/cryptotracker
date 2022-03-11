@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/llamatracker/static/css/main.88ca909d.css",
-    "main.js": "/llamatracker/static/js/main.eea6c038.js",
-    "static/js/787.9340f2da.chunk.js": "/llamatracker/static/js/787.9340f2da.chunk.js",
-    "index.html": "/llamatracker/index.html",
-    "main.88ca909d.css.map": "/llamatracker/static/css/main.88ca909d.css.map",
-    "main.eea6c038.js.map": "/llamatracker/static/js/main.eea6c038.js.map",
-    "787.9340f2da.chunk.js.map": "/llamatracker/static/js/787.9340f2da.chunk.js.map"
+    "main.css": "/cryptotracker/static/css/main.88ca909d.css",
+    "main.js": "/cryptotracker/static/js/main.c51844a9.js",
+    "static/js/787.9340f2da.chunk.js": "/cryptotracker/static/js/787.9340f2da.chunk.js",
+    "index.html": "/cryptotracker/index.html",
+    "main.88ca909d.css.map": "/cryptotracker/static/css/main.88ca909d.css.map",
+    "main.c51844a9.js.map": "/cryptotracker/static/js/main.c51844a9.js.map",
+    "787.9340f2da.chunk.js.map": "/cryptotracker/static/js/787.9340f2da.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.88ca909d.css",
-    "static/js/main.eea6c038.js"
+    "static/js/main.c51844a9.js"
   ]
 }
