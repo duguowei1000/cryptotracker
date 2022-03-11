@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import WatchlistTicker from "../components/WatchlistTicker";
+import { Link } from "react-router-dom";
 
 console.log(window.localStorage.getItem("watchlistCart"))
 export default function Watchlist() {
@@ -102,7 +103,11 @@ export default function Watchlist() {
             </div>
 
             {tickers}
-            <button onClick={clearList}>clear watchlist</button>
+            <button onClick={clearList}>Clear watchlist</button>
+            <p>&nbsp;</p>
+            <button><Link className="nav-link" to="/" style={{ textDecoration: 'none' }}>Back to Home</Link> </button> 
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
         </>
 
     )

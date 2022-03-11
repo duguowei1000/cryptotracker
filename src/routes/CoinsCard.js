@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Chart from 'react-apexcharts'
 import chart_ from "../chart_config";
+import { Link } from "react-router-dom";
 
 
 function CoinsCard() {
@@ -99,9 +100,12 @@ function CoinsCard() {
         </div>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
+        <button><Link className="nav-link" to="/" style={{ textDecoration: 'none' }}>Back to Home</Link> </button> 
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
         <p>&nbsp;</p>
         <nav>
-
+        
         </nav>
         </>
 

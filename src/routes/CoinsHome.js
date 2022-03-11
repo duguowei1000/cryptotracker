@@ -3,6 +3,7 @@ import CoinSelection from "../components/CoinSelection";
 import { useNavigate } from "react-router-dom";
 import Home_Watchlist from "./Home_Watchlist";
 
+
 export default function CoinsHome() {
 
     const [list, setList] = useState([]);
@@ -90,7 +91,16 @@ export default function CoinsHome() {
                 <button onClick={addToListStorage}>Save to WatchList</button>
             </div>
             <Home_Watchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin}/>
+        
+            <button onClick={addToListStorage}>Save to WatchList</button>
+
+            
+                
+                    <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
         </div>
+
 
     )
 }
