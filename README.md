@@ -37,6 +37,8 @@ Dropdown menu to find coins via search
 Drag and Drop of coins to suit investor's preference
 
 
+![](https://github.com/duguowei1000/llamatracker/assets/llama.png?raw=true)
+
 **Create React App**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
