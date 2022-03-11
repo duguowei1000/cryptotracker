@@ -2,6 +2,11 @@
   font-weight: bold
 }
 
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+.pixel_font{
+  font-family: 'VT323', monospace;
+}
+
 /* .button_add{
   border-radius: 10px;
 } */
@@ -138,6 +143,9 @@
   justify-content: space-around;
   align-items: center;
   
+}
+.margin_button{
+  margin-top: -30px;
 }
 
 

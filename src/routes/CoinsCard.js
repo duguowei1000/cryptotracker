@@ -100,7 +100,7 @@ function CoinsCard() {
         </div>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
-        <button><Link className="nav-link" to="/" style={{ textDecoration: 'none' }}>Back to Home</Link> </button> 
+        <Link className="nav-link" to="/" style={{ textDecoration: 'none' }} className="buttonCSS_2">Back to Home</Link>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
