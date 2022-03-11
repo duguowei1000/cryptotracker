@@ -77,7 +77,7 @@ function CoinsCard() {
     console.log(series.prices)
     const inputSeries = [{
         type : 'area',
-        name : id,
+        name : CoinName,
         data: series.prices
     }]
     function createMarkup() {
@@ -89,11 +89,17 @@ function CoinsCard() {
         <>
         <h1>{CoinName}</h1>
         {ChartDataLoaded && 
-        <Chart options={chart_.options} series={inputSeries} width="100%" height={450} />
+        <div className="coincardchart">
+        <Chart options={chart_.options} series={inputSeries} width="1000px" height={450}  />
+        </div>
     }   
-        <div>{CoinDetails.en}</div>
-        <div dangerouslySetInnerHTML={createMarkup()} /> 
- 
+        {/* <div>{CoinDetails.en}</div> */}
+        <div className="coinDescription">
+        <div  dangerouslySetInnerHTML={createMarkup()} /> 
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
         <nav>
 
         </nav>
