@@ -8,22 +8,32 @@ API sources: CoinGecko (https://www.coingecko.com/en/api/documentation)
 **Approach/Technologies used**
 
 React Framework (Create React App)
+    
     -Hooks (useState/useEffect)
+
 Apexcharts - Chart component
+
 react-router-dom": "^6.2.1"
+    
     -useParams 
+    
     -Outlet/Link
+    
     -useNavigate
 
 **Issues resolved**
 
+
 Converting Data structure to readable format by ApexChart component
+
 Converting LocalStorage to readable format across components
+
 Triggering useEffect for specific cases
 
 **Bonuses (future)**
 
 Dropdown menu to find coins via search
+
 Drag and Drop of coins to suit investor's preference
 
 
