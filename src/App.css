@@ -1,3 +1,52 @@
+.bold{
+  font-weight: bold
+}
+
+/* .button_add{
+  border-radius: 10px;
+} */
+
+.background {
+  background-image: url("/assets/background.jpg");
+  opacity: 0.5;
+  /* background-color: #cccccc; */
+  /* background-image: url("/assets/PokeGoldDemo-SilentHills.png"); */
+}
+
+.buttonClass {
+  font-size:15px;
+  font-family:Arial;
+  width:140px;
+  height:50px;
+  border-width:1px;
+  color:#14396a;
+  border-color:#333333;
+  font-weight:bold;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  box-shadow:inset 0px 1px 0px 0px #fff6af;
+  text-shadow:inset 0px 1px 0px #ffee66;
+  background:linear-gradient(#ffec64, #ffab23);
+}
+
+.buttonClass:hover {
+  background: linear-gradient(#ffab23, #ffec64);
+}
+        
+
+.roundbutton{
+  background-color: #F8CB63;
+	color: black;
+	border: solid black;
+	transition-duration: 0.4s;
+	width: 100px;
+	height: 50px;
+	border-radius: 20px;
+	visibility: hidden;
+}
+
 .coincardchart{
   display: flex;
   justify-content: center;
@@ -18,6 +67,10 @@
   display: inline-block;
 }
 
+.savetowatchlist{
+  border-radius: 20px;
+  margin: 40px
+}
 .tickerID{
   width: 80px;
   height: 20px;
@@ -30,13 +83,21 @@
   display: inline-block;
   width: 100px;
   height: 150px;
+  
 }
 
 .tickerBox{
   width: 100px;
   height: 100px;
   display: inline-block;
+  
+
 }
+/* .tickerButton{
+
+  border-radius: 10px;
+  transition-duration: 1s;
+} */
 .watchlistfirstRow{
   font-size: 15px;
 }
@@ -122,3 +183,120 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+/* CSS DELETE BUTTON*/
+.button-45 {
+  align-items: center;
+  background-color: #FFE7E7;
+  background-position: 0 0;
+  border: 1px solid #FEE0E0;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #D33A2C;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 33.4929px;
+  list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+  padding: 2px 12px;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-underline-offset: 1px;
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+.button-45:active,
+.button-45:hover,
+.button-45:focus {
+  outline: 0;
+}
+
+
+.button-45:active {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+.button-45:hover {
+  background-color: #FFE3E3;
+  border-color: #FAA4A4;
+}
+
+.button-45:active:hover,
+.button-45:focus:hover,
+.button-45:focus {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+/* From cssbuttons.io GREEN BUTTON*/
+/* From cssbuttons.io by @AhSiber */
+.buttonCSS {
+  border: 1px solid seagreen;
+  border-radius: 5px;
+  font-weight: bolder;
+  background: rgb(255, 255, 255);
+  color: seagreen;
+  /* font-style: italic; */
+  padding: 4px;
+  padding-right: 5px;
+  padding-left: 8px;
+  font-size: 17px;
+ }
+ 
+ .buttonCSS:hover {
+  background-color: seagreen;
+  color: white;
+  border: 1px solid  seagreen;
+ }
+ /* */
+
+ .buttonCSS_1 {
+  border: 1px solid orange;
+  border-radius: 5px;
+  font-weight: bolder;
+  background: rgb(255, 255, 255);
+  color: orange;
+  /* font-style: italic; */
+  padding: 4px;
+  padding-right: 5px;
+  padding-left: 8px;
+  font-size: 17px;
+ }
+ 
+ .buttonCSS_1:hover {
+  background-color: orange;
+  color: white;
+  border: 1px solid  orange;
+ }
+ /* */
+ .buttonCSS_2 {
+  border: 1px solid blue;
+  border-radius: 5px;
+  font-weight: bolder;
+  background: rgb(255, 255, 255);
+  color: blue;
+  /* font-style: italic; */
+  padding: 4px;
+  padding-right: 5px;
+  padding-left: 8px;
+  font-size: 17px;
+ }
+ 
+ .buttonCSS_2:hover {
+  background-color: blue;
+  color: white;
+  border: 1px solid  blue;
+ }

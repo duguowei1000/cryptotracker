@@ -88,15 +88,15 @@ export default function CoinsHome() {
             <h1>Top 30 Coins</h1>
             {Tickers}
             <div>
-                <button onClick={addToListStorage}>Save to WatchList</button>
+                <button className="savetowatchlist buttonClass" onClick={addToListStorage}>Save to WatchList</button>
             </div>
             <Home_Watchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin}/>
         
-            <button onClick={addToListStorage}>Save to WatchList</button>
+            <button className="savetowatchlist buttonClass" onClick={addToListStorage}>Save to WatchList</button>
 
             
                 
-                    <p>&nbsp;</p>
+                <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
         </div>

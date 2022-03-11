@@ -14,9 +14,9 @@ const CoinSelection = (props) => {
     <div className="topcoinBox">
     <div className="tickerBox" > 
         
-        <button 
+        <button className="tickerButton"
             onClick={() => props.handleCoinClick(props)}>
-            <div className="tickerID" >{coinName}</div>
+            <div className="tickerID" className="bold">{coinName}</div>
             <div className="tickerPrice" >${coin.current_price}</div>
             <img 
             height="50px" 
@@ -24,9 +24,9 @@ const CoinSelection = (props) => {
             />
         </button>
     </div>
-        <button
-            onClick={() => props.handleAddCoin(props)}
-        >Add
+        <button className="button_add"
+            onClick={() => props.handleAddCoin(props)} style={{fontSize : 25}}
+        >+
         </button>
     </div>
 

@@ -4,7 +4,7 @@ import { Outlet,Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
     <h1>Crypto Tracker</h1>
 
     <nav
@@ -14,14 +14,14 @@ function App() {
         }}
       >
         
-        <Link to="/"> Home </Link> | {" "}
+        <div className='margin_button'><Link to="/" className="buttonCSS" style={{ textDecoration: 'none' }} > Home </Link> {" "}
+        {/* | {" "} */}
         {/* <Link to="CoinsHome">Coinlist</Link> | {" "} */}
-        <Link to="watchlist">Watchlist</Link> 
- 
+        <Link to="watchlist" className="buttonCSS" style={{ textDecoration: 'none' }}>Watchlist</Link> 
+        </div>
       </nav>
 
       <Outlet />
-
     </div>
   );
 }

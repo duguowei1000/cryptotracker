@@ -41,7 +41,7 @@ function WatchlistTicker(props){
             colorChange={colorChange()}
             /></td>
         
-        <button className="inline_block" onClick={()=> props.removeTickerClick(props)}> delete </button>
+        <button className="inline_block" onClick={()=> props.removeTickerClick(props)} className="button-45" role="button" style={{fontSize : 13}}> Delete </button>
         
        
         </table>

@@ -33,8 +33,8 @@ function HomeWatchlistTicker(props){
             colorChange={colorChange()}
             /></td>
        
-       <button onClick={()=> props.removeTickerClick(props.name)}> delete </button>
-       
+       <button onClick={()=> props.removeTickerClick(props.name)} className="button-45" role="button" style={{fontSize : 12}}> Delete </button>
+
         </table>
        
     )

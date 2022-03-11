@@ -103,9 +103,9 @@ export default function Watchlist() {
             </div>
 
             {tickers}
-            <button onClick={clearList}>Clear watchlist</button>
+            <button onClick={clearList} className="buttonCSS_1">Clear watchlist</button>
             <p>&nbsp;</p>
-            <button><Link className="nav-link" to="/" style={{ textDecoration: 'none' }}>Back to Home</Link> </button> 
+            <Link className="nav-link" to="/" style={{ textDecoration: 'none' }} className="buttonCSS_2">Back to Home</Link>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
         </>
