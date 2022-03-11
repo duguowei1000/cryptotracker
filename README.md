@@ -1,10 +1,12 @@
 # Llama.Tracker 
 
 **Summary**
+
 A simple crypto coins tracker that provides up-to-date information for investors
 API sources: CoinGecko (https://www.coingecko.com/en/api/documentation)
 
 **Approach/Technologies used**
+
 React Framework (Create React App)
     -Hooks (useState/useEffect)
 Apexcharts - Chart component
