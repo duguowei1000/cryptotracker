@@ -20,12 +20,10 @@ export default function Home_Watchlist(props) {
         fetchCoinDetails()
     }, [])
 
-    console.log(props.cart)
+
     const parsedArray = Object.values(props.cart) //coin ids in an array
-    console.log(parsedArray)
     const coinIDs = []
     for (let i = 0; i < coinDetails.length; i++) {
-        // console.log(coinDetails[i].id)
         for (let j = 0; j < parsedArray.length; j++) {
             if (coinDetails[i].id === parsedArray[j]) {
                 coinIDs.push(coinDetails[i]) //array of coins with their information
@@ -36,48 +34,48 @@ export default function Home_Watchlist(props) {
 
     const tickers = coinIDs.map((x, index) => (
 
-        <div 
+        <div
             key={index}>
-                <div className="watchlistbox" >
-            <HomeWatchlistTicker 
-                id={x.id}
-                name={x.name}
-                price={x.current_price}
-                percentchange={x.price_change_percentage_24h}
-                img={x.image}
-                removeTickerClick={props.removeTickerClick} 
-                 
-            />
-            
-                       
+            <div className="watchlistbox" >
+                <HomeWatchlistTicker
+                    id={x.id}
+                    name={x.name}
+                    price={x.current_price}
+                    percentchange={x.price_change_percentage_24h}
+                    img={x.image}
+                    removeTickerClick={props.removeTickerClick}
+
+                />
+
+
             </div>
-            <hr width="850px"/>
-            
-            
+            <hr width="850px" />
+
+
 
         </div>))
 
-        return (
+    return (
 
-            <>  
-                <div className="header_home">
+        <>
+            <div className="header_home">
                 <div className="watchlistheader_home">
-                <table className="watchlistTicker">
-                
-                <td><h1 className="watchlistfirstRow">Coin</h1></td>
-                <td><h1 className="watchlistfirstRow">Price (USD)</h1></td>
-                <td><h1 className="watchlistfirstRow">24hr Change</h1></td>
-                <td><h1 className="watchlistfirstRow">Last 30 days</h1></td>
+                    <table className="watchlistTicker">
 
-                </table>
+                        <td><h1 className="watchlistfirstRow">Coin</h1></td>
+                        <td><h1 className="watchlistfirstRow">Price (USD)</h1></td>
+                        <td><h1 className="watchlistfirstRow">24hr Change</h1></td>
+                        <td><h1 className="watchlistfirstRow">Last 30 days</h1></td>
+
+                    </table>
                 </div>
-                </div>
-                <hr width="850px" />
-                {tickers}
-    
-            </>
+            </div>
+            <hr width="850px" />
+            {tickers}
 
-        )
+        </>
+
+    )
 
 
-    }
+}

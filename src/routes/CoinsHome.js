@@ -39,37 +39,35 @@ export default function CoinsHome() {
         handleToggle() //add list to local storage
         setWatchlistCart(
             {
-            ...watchlistCart,[item.coin.name]: item.coin.id
-        }
+                ...watchlistCart, [item.coin.name]: item.coin.id
+            }
         )
         setWatchlistDetails(
             [
-            ...watchlistDetails, item
-        ]
+                ...watchlistDetails, item
+            ]
         )
-        let newStorage = myStorage.getItem('watchlistCart')
-        console.log(JSON.parse(newStorage))
     }
 
     const handleRemoveCoin = (item) => {
 
-        const clonedlistcart = {...watchlistCart}
+        const clonedlistcart = { ...watchlistCart }
         delete clonedlistcart[item]
         console.log(item)
 
         setWatchlistCart(clonedlistcart)
         handleToggle() //add list to local storage
-            
+
     }
     console.log(watchlistCart)
 
     const handleToggle = () => {
         setToggle(!toggle);
-      };
+    };
 
     const addToListStorage = () => {
         // console.log(watchlistCart) //object
-        myStorage.setItem('watchlistCart',JSON.stringify(watchlistCart));
+        myStorage.setItem('watchlistCart', JSON.stringify(watchlistCart));
         console.log(myStorage) //string
 
     }
@@ -90,15 +88,15 @@ export default function CoinsHome() {
             <div>
                 <button className="savetowatchlist buttonClass" onClick={addToListStorage}>Save to WatchList</button>
             </div>
-            <Home_Watchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin}/>
-        
+            <Home_Watchlist cart={watchlistCart} removeTickerClick={handleRemoveCoin} />
+
             <button className="savetowatchlist buttonClass" onClick={addToListStorage}>Save to WatchList</button>
 
-            
-                
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
+
+
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
         </div>
 
 

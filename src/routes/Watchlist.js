@@ -24,7 +24,7 @@ export default function Watchlist() {
         try {
             let watchlistCart = window.localStorage.getItem("watchlistCart")
             let parsedCart = JSON.parse(watchlistCart) //convert to array of  object
-            console.log(parsedCart)  //object
+            // console.log(parsedCart)  //object
             return parsedCart || defaultCart
         } catch (error) {
             console.error(error)
@@ -37,21 +37,23 @@ export default function Watchlist() {
     }, [])
 
     useEffect(() => {
-        if(coinDetails.length){
+        if (coinDetails.length) {
             const watchlist = getWatchlist()
-            
+            // console.log(">>>CoinDetails", coinDetails)
+            // console.log(">>>watchlist", watchlist)
             const matchingCoins = coinDetails.filter(coinDetail => {
                 return Object.values(watchlist).includes(coinDetail.id)
             })
-            setCoins(matchingCoins)
+            setCoins(matchingCoins)  //find coins that match the local.storage against API call
+            // console.log('>>>matchingCoins', matchingCoins)
         }
-    },[coinDetails])
-    
+    }, [coinDetails])
+
     const removeCoinID = (storedItem) => {
-        const {name} = storedItem
+        const { name } = storedItem
         const watchlist = getWatchlist()
         delete watchlist[name]
-    
+
         window.localStorage.setItem("watchlistCart", JSON.stringify(watchlist))
         setCoinDetails([...coinDetails]) //trigger the useeffect for filtering
     }
@@ -62,7 +64,7 @@ export default function Watchlist() {
         window.localStorage.setItem("watchlistCart", JSON.stringify(""))
         setCoinDetails([...coinDetails])
     }
-    
+
     const tickers = coins.map((x, index) => (
 
         <div
@@ -89,17 +91,17 @@ export default function Watchlist() {
 
         <>
             <div className="header">
-            <div className="watchlistheader">
-            <table className="watchlistTicker" >
-                
-                <td><h1 className="watchlistfirstRow" width="100px">Coin</h1></td>
-                <td><h1 className="watchlistfirstRow" width="100px">Price (USD)</h1></td>
-                <td><h1 className="watchlistfirstRow" width="100px">Market Cap</h1></td>
-                <td><h1 className="watchlistfirstRow">24hr Change</h1></td>
-                <td><h1 className="watchlistfirstRow">Last 30 days</h1></td>
-                
-            </table>
-            </div>
+                <div className="watchlistheader">
+                    <table className="watchlistTicker" >
+
+                        <td><h1 className="watchlistfirstRow" width="100px">Coin</h1></td>
+                        <td><h1 className="watchlistfirstRow" width="100px">Price (USD)</h1></td>
+                        <td><h1 className="watchlistfirstRow" width="100px">Market Cap</h1></td>
+                        <td><h1 className="watchlistfirstRow">24hr Change</h1></td>
+                        <td><h1 className="watchlistfirstRow">Last 30 days</h1></td>
+
+                    </table>
+                </div>
             </div>
 
             {tickers}
