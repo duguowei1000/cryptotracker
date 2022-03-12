@@ -15,7 +15,7 @@ import CoinsCard from './routes/CoinsCard';
 //{process.env.PUBLIC_URL}>
 ReactDOM.render(
   
-  <BrowserRouter basename="/cryptotracker">
+  <BrowserRouter basename="/llamatracker">
     <Routes>
       <Route path="/" element={<App />}>
         {/* *nested under app */}
