@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App" >
       <div className='topPart'>
-        <img src={image} height="100px" className='inline_block' style={{ marginTop: 10 }}></img>
+        <img src={image} alt="" height="100px" className='inline_block' style={{ marginTop: 10 } }></img>
         <h1 className='inline_block pixel_font' style={{ fontSize: 70 }}>Llama.Tracker</h1>
       </div>
       <nav
