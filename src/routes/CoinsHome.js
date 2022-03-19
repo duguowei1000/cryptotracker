@@ -15,42 +15,66 @@ export default function CoinsHome() {
     const navigate = useNavigate();
     const myStorage = window.localStorage;
     const [Value, setValue] = useState([])
-    const [fullList, setFulllist] = useState([]) 
+    const [fullList, setFulllist] = useState([])
+    // const [fetchStatus, setfetchStatus] = useState(null)
+    // const [searchStatus, setSearchStatus] = useState(null)
+    // const [dataLoaded, setDataLoaded] = useState(null)
 
 
     const fetchDetails = () => {
         fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
-        .then((r) => r.json())
-        .then((d) => {
-            setFulllist(d);
-            const reducedArray = d.splice(0,30)
-            // const reducedArray = d.filter(element => { return element["name"].includes(Value) 
-            // });
-            setList(reducedArray)
-            // console.log(list)
+            .then((r) => r.json())
+            .then((d) => {
+                setFulllist(d);
+                const reducedArray = d.splice(0, 30)
+                // const reducedArray = d.filter(element => { return element["name"].includes(Value) 
+                // });
+                setList(reducedArray)
+                // setfetchStatus(true)
+                // console.log(list)
 
-        })
-        .catch(error => { console.log(error.message) })
+            })
+            .catch(error => { console.log(error.message) })
     }
 
     useEffect(() => {
         fetchDetails()
-
     }
         , [])
+    useEffect(() => {
+        // const reducedArray = fullList.splice(0,30)
+        // setList(reducedArray)
+        if (fullList.length) {
+            const searchArray = fullList.filter(element => {
+                const lowercase = element.name.toLowerCase()
+                console.log(Value)
+                console.log(lowercase)
+                const submitted = Value.toLowerCase()
+                return lowercase.includes(submitted)
+            });
+            console.log('search', searchArray)
+            console.log('list', list)
+            if (searchArray.length) {
+                setList(searchArray)
+        } else setList(fullList)
+            // setSearchStatus(true)
+        }
+
+    }
+        , [toggle])
+
+    // useEffect(() => {
+    //     if (fetchStatus && searchStatus) {
+    //         setDataLoaded(true);
+    //     }
+    // }, [fetchStatus, searchStatus])
 
     const search = (searchValue) => {
         setValue(searchValue)
-        console.log(searchValue)
-        console.log(fullList)
-        console.log(Value.toLowerCase())
-        const searchArray = fullList.filter(element => { 
-            const lowercase = element.name.toLowerCase()
-            return lowercase.includes(Value.toLowerCase()) 
-                });
-        console.log(searchArray)
-        setList(searchArray)
-        
+        // setList([...fullList])
+        handleToggle()
+
+
     }
 
     const handleCoinClick = (x) => {
@@ -79,13 +103,10 @@ export default function CoinsHome() {
 
         const clonedlistcart = { ...watchlistCart }
         delete clonedlistcart[item]
-        console.log(item)
-
         setWatchlistCart(clonedlistcart)
         handleToggle() //add list to local storage
 
     }
-    console.log(watchlistCart)
 
     const handleToggle = () => {
         setToggle(!toggle);
@@ -94,8 +115,6 @@ export default function CoinsHome() {
     const addToListStorage = () => {
         // console.log(watchlistCart) //object
         myStorage.setItem('watchlistCart', JSON.stringify(watchlistCart));
-        console.log(myStorage) //string
-
     }
 
 
@@ -109,11 +128,12 @@ export default function CoinsHome() {
                 handleAddCoin={handleAddCoin} />
         )
     })
+
     return (
         <div>
-            
+
             <h1>Top 30 Coins</h1>
-            <Search search={search}/>
+            <Search search={search} toggle={handleToggle} />
             {Tickers}
             <div>
                 <button className="savetowatchlist buttonClass" onClick={addToListStorage}>Save to WatchList</button>

@@ -13,6 +13,7 @@ const Search = (props) => {
   const callSearchFunction = (e) => {
     e.preventDefault();
     props.search(searchValue); //passing back as props
+    props.toggle()
     setSearchValue(""); //adding this to automatically clear input field
   };
 
