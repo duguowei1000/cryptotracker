@@ -26,7 +26,7 @@ export default function CoinsHome() {
             .then((r) => r.json())
             .then((d) => {
                 setFulllist(d);
-                const reducedArray = d.splice(0, 30)
+                const reducedArray = d.slice(0, 29)
                 // const reducedArray = d.filter(element => { return element["name"].includes(Value) 
                 // });
                 setList(reducedArray)
@@ -44,15 +44,13 @@ export default function CoinsHome() {
     useEffect(() => {
         // const reducedArray = fullList.splice(0,30)
         // setList(reducedArray)
-        if (fullList.length) {
+        if (Value.length) {
             const searchArray = fullList.filter(element => {
                 const lowercase = element.name.toLowerCase()
-                console.log(Value)
-                console.log(lowercase)
                 const submitted = Value.toLowerCase()
                 return lowercase.includes(submitted)
             });
-            console.log('search', searchArray)
+            console.log('search>>>', searchArray)
             console.log('list', list)
             if (searchArray.length) {
                 setList(searchArray)
@@ -70,11 +68,10 @@ export default function CoinsHome() {
     // }, [fetchStatus, searchStatus])
 
     const search = (searchValue) => {
+        handleToggle()
         setValue(searchValue)
         // setList([...fullList])
-        handleToggle()
-
-
+        
     }
 
     const handleCoinClick = (x) => {
@@ -111,6 +108,10 @@ export default function CoinsHome() {
     const handleToggle = () => {
         setToggle(!toggle);
     };
+    const handleTopCoins = () => {
+        setValue([])
+        fetchDetails()
+    }
 
     const addToListStorage = () => {
         // console.log(watchlistCart) //object
@@ -133,8 +134,17 @@ export default function CoinsHome() {
         <div>
 
             <h1>Top 30 Coins</h1>
-            <Search search={search} toggle={handleToggle} />
+            
+            <div><Search search={search} toggle={handleToggle} /></div>
+
+            
+            <div className="ticker">
             {Tickers}
+            </div>
+            <button onClick= {() => {
+                handleTopCoins()
+                handleToggle()
+                }}> Back to Top 30 Coins </button>
             <div>
                 <button className="savetowatchlist buttonClass" onClick={addToListStorage}>Save to WatchList</button>
             </div>

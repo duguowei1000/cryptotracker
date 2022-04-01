@@ -66,6 +66,15 @@
   border-radius: 20px;
   margin: 40px
 }
+/* .search{
+  margin-left: 170px;
+} */
+/* .searchunits{
+  margin: 5px;
+} */
+.ticker{
+  margin-top: 20px;
+}
 .tickerID{
   width: 80px;
   height: 20px;

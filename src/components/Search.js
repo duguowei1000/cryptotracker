@@ -25,7 +25,12 @@ const Search = (props) => {
         type="text"
       />
 
-      <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+      <input className="searchunits" onClick={callSearchFunction} type="submit" value="SEARCH" />
+
+      {/* <button className="searchunits" onClick= {props.handleClick}> Back to List </button> */}
+
+
+
     </form>
   );
 };
