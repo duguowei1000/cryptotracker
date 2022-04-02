@@ -20,6 +20,9 @@ export default function CoinsHome() {
     // const [searchStatus, setSearchStatus] = useState(null)
     // const [dataLoaded, setDataLoaded] = useState(null)
 
+    // const backList = document.getElementsByClassName('buttonBack')
+    // backList.style.visibility = 'hidden'
+    const [show, setShow] = useState(false);
 
     const fetchDetails = () => {
         fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
@@ -68,6 +71,7 @@ export default function CoinsHome() {
     // }, [fetchStatus, searchStatus])
 
     const search = (searchValue) => {
+        setShow(true)
         handleToggle()
         setValue(searchValue)
         // setList([...fullList])
@@ -81,9 +85,10 @@ export default function CoinsHome() {
         navigate(`/CoinsHome/${x.coin.id}`);
 
     }
-
+    
     const handleAddCoin = (item) => {
         handleToggle() //add list to local storage
+        // backList.style.visibility = 'visible'
         setWatchlistCart(
             {
                 ...watchlistCart, [item.coin.name]: item.coin.id
@@ -111,6 +116,8 @@ export default function CoinsHome() {
     const handleTopCoins = () => {
         setValue([])
         fetchDetails()
+        setShow(false)
+        // backList.style.visibility = 'hidden'
     }
 
     const addToListStorage = () => {
@@ -141,10 +148,12 @@ export default function CoinsHome() {
             <div className="ticker">
             {Tickers}
             </div>
-            <button onClick= {() => {
+            <div style={{ visibility: show ? "visible" : "hidden" }}>
+            <button className="buttonBack buttonCSS_1 fontheight8" onClick= {() => {
                 handleTopCoins()
                 handleToggle()
-                }}> Back to Top 30 Coins </button>
+                }}> List Top 30 Coins </button>
+            </div>
             <div>
                 <button className="savetowatchlist buttonClass" onClick={addToListStorage}>Save to WatchList</button>
             </div>
