@@ -2,7 +2,7 @@
 
 **Summary**
 A simple crypto coins tracker that provides up-to-date information for investors
-website: https://duguowei1000.github.io/llamatracker/
+website: https://duguowei1000.github.io/llamatracker/ (best viewed in chrome)
 
 API sources: CoinGecko (https://www.coingecko.com/en/api/documentation)
 
