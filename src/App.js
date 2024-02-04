@@ -10,8 +10,10 @@ function App() {
     <div className="App" >
       <div className='topPart'>
         <img src={image} alt="" height="100px" className='inline_block' style={{ marginTop: 10 } }></img>
-        <h1 className='inline_block pixel_font' style={{ fontSize: 70 }}>Llama.Tracker</h1>
+         <div><h1 className='inline_block pixel_font' style={{ fontSize: 70 }}>Llama.Tracker</h1>
+        <div className='notice'> Please note the site is rate limited to 30 API calls (all API info is credited to CoinGecko)</div></div>
       </div>
+
       <nav
         style={{
           borderBottom: "solid 1px",

@@ -20,12 +20,13 @@ ReactDOM.render(
       <Route path="/" element={<App />}>
         {/* *nested under app */}
         <Route index element ={<CoinsHome />}/>
-        <Route path="/CoinsHome/:id" element={<CoinsCard/>}/>
-        <Route path="/Watchlist" element={<Watchlist />}></Route>
+            <Route path="/CoinsHome/:id" element={<CoinsCard/>}/>
+            <Route path="/Watchlist" element={<Watchlist />}>
+
+        </Route>
         {/* <Route path="/Coins" element={<Coins />}></Route> */}
-        
-      
       </Route>
+      
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

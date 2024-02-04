@@ -121,6 +121,12 @@
 .name_size{
   font-size: 18px;
 }
+
+.notice{
+
+  margin-bottom: 40px;
+}
+
 .watchlistheader{
   width: 80%;
   display: flex;
